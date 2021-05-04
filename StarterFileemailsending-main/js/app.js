@@ -49,5 +49,37 @@ function sendEmail(e) {
 
         
     document.querySelector('#loaders').appendChild( sendEmailImg );
-    
+   
+     setTimeout(function() {
+        sendEmailForm.reset();
+        sendEmailImg.remove();
+    }, 5000);
+}, 3000);
+}
+
+
+function validateField() {
+let errors;
+
+
+validateLength(this)
+
+
+if(this.type === 'email') {
+    validateEmail(this);
+}
+
+
+errors = document.querySelectorAll('.error')
+
+
+if(email.value !== '' && message.value !== '') {
+    if(errors.length === 0) {
+        // the bottom shoukd be enabled
+        sendBtn.disabled = false;
+    }
+}
+}
+
+
 

@@ -80,6 +80,30 @@ if(email.value !== '' && message.value !== '') {
     }
 }
 }
+       
+
+function validateLength(field) {
+    if(field.value.length > 0 ) {
+        field.style.borderBottomColor = 'green';
+        field.classList.remove('error');
+    } else {
+        field.style.borderBottomColor = 'red';
+        field.classList.add('error');
+    }
+}
+
+function validateEmail(field) {
+    let emailText = field.value;
+    
+    if(emailText.indexOf('@') !== -1){
+        field.style.borderBottomColor = 'green';
+        field.classList.remove('error');
+    } else {
+        field.style.borderBottomColor = 'red';
+        field.classList.add('error');
+    }
+}
+
 
 
 

@@ -22,3 +22,32 @@ function eventListeners() {
     sendEmailForm.addEventListener('submit', sendEmail);
     resetBtn.addEventListener('click', resetForm);
 }
+//Functions 
+
+// App Initialization
+function appInit() {
+    // disable the send button on load
+    sendBtn.disabled = true;
+}
+
+function sendEmail(e) {
+    e.preventDefault();
+
+ 
+    const spinner = document.querySelector('#spinner');
+    spinner.style.display = 'block';
+
+ 
+    const sendEmailImg = document.createElement('img');
+    sendEmailImg.src = 'img/mail.gif';
+    sendEmailImg.style.display = 'block';
+
+    
+    setTimeout(function() {
+        
+        spinner.style.display = 'none';
+
+        
+    document.querySelector('#loaders').appendChild( sendEmailImg );
+    
+
